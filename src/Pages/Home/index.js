@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { RootContext } from '../../Utils/Contexts';
+import { RootContext } from '../../Utils/Contexts.js';
 import "./style.css";
 
 export default function () {

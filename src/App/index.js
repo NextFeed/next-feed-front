@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { RootContext } from '../Utils/Contexts';
-import Home from '../Pages/Home';
+import { RootContext } from '../Utils/Contexts.js';
+import Home from '../Pages/Home/index.js';
 
 const hashToPage = (hash) => {
 	return <Home/>;
