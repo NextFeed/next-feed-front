@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { RootContext } from '../Utils/Contexts.js';
 import Home from '../Pages/Home/index.js';
+import Dummy from '../Pages/Dummy/index.test.js';
 
 const hashToPage = (hash) => {
+    if(hash === "#tagresult") {
+        return <Dummy/>
+    }
 	return <Home/>;
 };
 
@@ -10,7 +14,7 @@ export default function() {
 	const [screenW, setScreenW] = useState(window.innerWidth);
     const [screenH, setScreenH] = useState(window.innerHeight);
 	const [hash, setHash] = useState(window.location.hash);
-	const [tag, setTag] = useState();
+	const [tag, setTag] = useState("");
 
 	const onResize = () => {
         setScreenW(window.innerWidth);
@@ -22,10 +26,10 @@ export default function() {
     };
 
 	useEffect(() => {
-        const storageTag = window.sessionStorage.getItem("tag");
-        if(storageTag) {
-            setTag(storageTag);
-        }
+        // const storageTag = window.sessionStorage.getItem("tag");
+        // if(storageTag) {
+        //     setTag(storageTag);
+        // }
 
         window.addEventListener('resize', onResize);
         window.addEventListener("hashchange", onHashchange);

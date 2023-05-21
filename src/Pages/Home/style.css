@@ -34,7 +34,24 @@
 	color: #000;
 }
 
+.public- {
+	width: 127px;
+	height: 15px;
+	margin: 0 77px 6px 76px;
+	font-family: Inter;
+	font-size: 12px;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: var(--main);
+  }
+  
+
 .Rectangle-1 {
+	position: relative;
 	width: 280px;
 	height: 40px;
 	flex-grow: 0;
@@ -49,11 +66,12 @@
 	width: 21px;
 	height: 21px;
 	flex-grow: 0;
-	margin: 5px 8px 3px 0;
-	background-color: var(--grey-3);
+	margin: 5px 0 5px 7px;
 }
 
 .Instagram- {
+	left: 42px;
+	position: absolute;
 	width: 117px;
 	height: 21px;
 	flex-grow: 0;
@@ -67,22 +85,41 @@
 	letter-spacing: normal;
 	text-align: left;
 	color: var(--grey-3);
+	transition: .5s;
+	-webkit-user-select: none; /* Safari */
+  	-ms-user-select: none; /* IE 10 and IE 11 */
+  	user-select: none; /* Standard syntax */
+}
+
+input {
+	width: 160px;
+	height: 36px;
+	border: none;
+	margin: 4px 4px 4px 4px;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: var(--grey-1);
+	font-size: 17px;
+}
+
+input:valid + .Instagram- {
+	opacity: 0;
+}
+
+input:focus + .Instagram- {
+	opacity: 0;
 }
 
 .Rectangle-17 {
 	width: 62px;
 	height: 29px;
 	flex-grow: 0;
-	margin: 0 0 0 51px;
 	/* padding: 7px 8px 7px 9px; */
+	margin: 5px 7px 5px 0;
 	border-radius: 14.5px;
 	background-image: linear-gradient(65deg, #ffe144 1%, #f93560 40%, #da21b0 67%, #585acb 100%);
-}
-
-._ {
-	width: 45px;
-	height: 15px;
-	flex-grow: 0;
 	font-family: Inter;
 	font-size: 12px;
 	font-weight: bold;
@@ -100,7 +137,6 @@
 	margin: 41px 38px 0 0;
 	/* padding: 15px 46px 15px 44px; */
 	border-radius: 15px;
-	background-color: var(--main);
 }
 
 .Rectangle-3 {
@@ -112,7 +148,15 @@
 	background-color: var(--grey-3);
 }
 
-span {
+.selected {
+	background-color: var(--main);
+}
+
+.unselected {
+	background-color: var(--grey-3);
+}
+
+.gender {
 	width: 32px;
 	height: 21px;
 	font-family: Inter;
