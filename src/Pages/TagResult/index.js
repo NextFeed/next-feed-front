@@ -30,7 +30,7 @@ export default function () {
                     src="Images/back.png" 
                     onClick={() => {
                         setTag("");
-                        window.location.hash = "";
+                        window.history.back();
                     }}
                 />
                 <span className="a-">

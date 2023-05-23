@@ -28,8 +28,7 @@ export default function () {
                     className="back button"
                     src="Images/back.png"
                     onClick={() => {
-                        setTag("");
-                        window.location.hash = "#tagresult";
+                        window.history.back();
                     }}
                 />
                 <span className="a-">
