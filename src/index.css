@@ -37,6 +37,21 @@ code {
     flex-direction: column;
 }
 
+/* flex start column direction */
+.fsc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* flex start */
+.fs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .fb {
     display: flex;
     justify-content: space-between;
@@ -52,5 +67,50 @@ code {
 }
 
 .button:hover {
-	opacity: 0.8;
+	opacity: 0.75;
+}
+
+
+.Rectangle-16 {
+    width: 390px;
+    height: 121px;
+    /* margin: 0 0 77px; */
+    /* padding: 44px 120px 19px 25px; */
+    background-color: var(--white);
+}
+
+.logo {
+    width: 34px;
+    height: 23px;
+    /* margin: 0 58px 5px 123px; */
+}
+
+.tab {
+    position: relative;
+    width: 390px;
+}
+
+
+.back {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    /* margin: 5px 65px 0 0; */
+    padding: 6.3px;
+}
+
+.a- {
+    width: 150px;
+    height: 30px;
+    /* margin: 5px 0 0 65px; */
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
 }

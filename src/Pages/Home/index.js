@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
 import "./style.css";
 
-const apiBaseUrl = "http://localhost:3000";
 
 export default function () {
     const {
@@ -14,8 +13,9 @@ export default function () {
     } = useContext(RootContext);
     const [tagInput, setTagInput] = useState("");
     const [isMale, setIsMale] = useState(true);
-
+    
     const onSubmit = async(event) => {
+        // const apiBaseUrl = "http://localhost:3000";
         // const response = await fetch(`${apiBaseUrl}/api/tag?tag=${tagInput}`);
         // const result = await response.json();
         event.preventDefault();
@@ -30,7 +30,7 @@ export default function () {
         }}
         className="fcc"
     >
-        <img className="Logo-1" src="Images/Logo1.png"/>
+        <img className="Logo-1" src="Images/logo.png"/>
         <span className="-Instagram-">
             당신의 Instagram 계정을
             입력하세요!
@@ -46,6 +46,7 @@ export default function () {
                 <img className="Vector" src="Images/Vector.png"/>
                 <input 
                     type="text" 
+                    className="taginput"
                     value={tagInput}
                     onChange={event => setTagInput(event.target.value)}
                     required 
@@ -55,7 +56,7 @@ export default function () {
                 </div>
                 <input 
                     type="submit" 
-                    className="Rectangle-17 fc button"
+                    className="submit fc button"
                     value="분석하기"
                 />
             </label>

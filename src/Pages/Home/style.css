@@ -91,7 +91,7 @@
   	user-select: none; /* Standard syntax */
 }
 
-input {
+input.taginput {
 	width: 160px;
 	height: 36px;
 	border: none;
@@ -104,15 +104,16 @@ input {
 	font-size: 17px;
 }
 
-input:valid + .Instagram- {
+input.taginput:valid + .Instagram- {
 	opacity: 0;
 }
 
-input:focus + .Instagram- {
+input.taginput:focus + .Instagram- {
 	opacity: 0;
 }
 
-.Rectangle-17 {
+input.submit {
+	border: none;
 	width: 62px;
 	height: 29px;
 	flex-grow: 0;

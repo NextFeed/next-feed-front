@@ -1,12 +1,32 @@
 import { useEffect, useState } from "react";
 import { RootContext } from '../Utils/Contexts.js';
 import Home from '../Pages/Home/index.js';
-import Dummy from '../Pages/Dummy/index.test.js';
+import TagResult from '../Pages/TagResult/index.js';
+import UploadOne from '../Pages/UploadOne/index.js';
+import OneResult from '../Pages/OneResult/index.js';
+import UploadMulti from '../Pages/UploadMulti/index.js';
+import MultiResult from '../Pages/MultiResult/index.js';
+import Loading from "../Pages/Loading/index.js";
 
 const hashToPage = (hash) => {
     if(hash === "#tagresult") {
-        return <Dummy/>
+        return <TagResult/>
     }
+    if(hash === "#uploadone") {
+        return <UploadOne/>
+    }
+    if(hash === "#oneresult") {
+        return <OneResult/>
+    }
+    if(hash === "#uploadmulti") {
+        return <UploadMulti/>
+    }
+    if(hash === "#multiresult") {
+        return <MultiResult/>
+    }
+    if(hash === "#loading") {
+        return <Loading/>
+    } 
 	return <Home/>;
 };
 

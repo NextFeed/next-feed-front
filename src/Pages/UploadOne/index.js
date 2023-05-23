@@ -1,0 +1,76 @@
+import { useContext, useEffect, useRef, useState } from "react";
+import { RootContext } from '../../Utils/Contexts.js';
+import "./style.css";
+
+export default function () {
+    const {
+        tag,
+        setTag,
+        hash,
+        screenW,
+        screenH,
+    } = useContext(RootContext);
+
+    const hiddenFileInput = useRef(null);
+    const [uploadedFile, setUploadedFile] = useState(null);
+
+    return <div
+        style={{
+            width: screenW,
+            height: screenH,
+        }}
+        className="fsc"
+    >
+        <div class="Rectangle-16 fcc">
+            <img
+                className="logo"
+                src="Images/logo.png"
+            />
+            <div className="fc tab">
+                <img
+                    className="back button"
+                    src="Images/back.png"
+                    onClick={() => {
+                        setTag("");
+                        window.location.hash = "#tagresult";
+                    }}
+                />
+                <span className="a-">
+                    한 장 분석
+                </span>
+            </div>
+        </div>
+        <div 
+            class="Rectangle-10 fc button"
+            onClick={() => {
+                hiddenFileInput.current.click();
+            }}
+        >
+            <input
+                className="fileinput1"
+                type="file"
+                accept='image/jpg,image/png,image/jpeg,image/gif'
+                ref={hiddenFileInput}
+                onChange={(event) => {
+                    setUploadedFile(URL.createObjectURL(event.target.files[0]));
+                }}
+            ></input>
+            <img class="uploadImage" src={uploadedFile || "Images/upload.png"} />
+        </div>
+        <div 
+            class={"Frame-24 fc button " + (uploadedFile ? "active" : "disabled")}
+            onClick={() => {
+                if(uploadedFile) {
+                    window.location.hash = "#oneresult";
+                }
+                else {
+                    alert("이미지를 업로드하세요.");
+                }
+            }}
+        >
+            <span class="analysis">
+                분석하기
+            </span>
+        </div>
+    </div>;
+};
