@@ -12,7 +12,7 @@ app.use(Cors({origin: "http://localhost:3001"}));
 app.use('/api', Api);
 app.use(Express.static("build"));
 app.get('*', (req, res) => {
-    res.sendFile(Path.resolve(__dirname, '..', 'build', 'index.html'));
+    res.sendFile(Path.resolve('..', 'build', 'index.html'));
 });
 app.set('port', process.env.PORT || 4000);
 

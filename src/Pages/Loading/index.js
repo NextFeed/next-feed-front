@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
-import "./style.css";
 
 export default function () {
     const {
@@ -9,6 +8,7 @@ export default function () {
         hash,
         screenW,
         screenH,
+        loadingRate,
     } = useContext(RootContext);
 
     return <div
@@ -23,7 +23,7 @@ export default function () {
         </span>
         <div className="progressbar">
             <div className="progresspercent">
-                0%
+                {loadingRate * 100}%
             </div>
             <div className="progresscontainer">
                 <div className="progress">

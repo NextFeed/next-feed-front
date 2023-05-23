@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
-import "./style.css";
 
 
 export default function () {
@@ -10,17 +9,24 @@ export default function () {
         hash,
         screenW,
         screenH,
+        setIsLoading,
+        setLoadingRate,
     } = useContext(RootContext);
     const [tagInput, setTagInput] = useState("");
     const [isMale, setIsMale] = useState(true);
     
     const onSubmit = async(event) => {
+        event.preventDefault();
+        setTag(tagInput);
+        setIsLoading(true);
+        setLoadingRate(0);
         // const apiBaseUrl = "http://localhost:3000";
         // const response = await fetch(`${apiBaseUrl}/api/tag?tag=${tagInput}`);
         // const result = await response.json();
-        event.preventDefault();
-        setTag(tagInput);
+        setLoadingRate(0.5);
         window.location.hash = "tagresult";
+        setLoadingRate(1);
+        setIsLoading(false);
     };
 
     return <div

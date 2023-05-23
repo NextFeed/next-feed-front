@@ -1,6 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
-import "./style.css";
 
 export default function () {
     const {
@@ -60,7 +59,7 @@ export default function () {
             class={"Frame-24 fc button " + (uploadedFile ? "active" : "disabled")}
             onClick={() => {
                 if(uploadedFile) {
-                    window.location.hash = "#oneresult";
+                    window.location.hash = "oneresult";
                 }
                 else {
                     alert("이미지를 업로드하세요.");

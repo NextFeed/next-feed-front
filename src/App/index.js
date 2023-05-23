@@ -24,9 +24,6 @@ const hashToPage = (hash) => {
     if(hash === "#multiresult") {
         return <MultiResult/>
     }
-    if(hash === "#loading") {
-        return <Loading/>
-    } 
 	return <Home/>;
 };
 
@@ -35,6 +32,8 @@ export default function() {
     const [screenH, setScreenH] = useState(window.innerHeight);
 	const [hash, setHash] = useState(window.location.hash);
 	const [tag, setTag] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [loadingRate, setLoadingRate] = useState(0);
 
 	const onResize = () => {
         setScreenW(window.innerWidth);
@@ -66,7 +65,17 @@ export default function() {
         hash,
         screenW,
         screenH,
+        isLoading,
+        setIsLoading,
+        loadingRate,
+        setLoadingRate,
     }}>
-		{hashToPage(hash)}
+		{
+            isLoading ? 
+            <Loading/> :
+            tag ? 
+            hashToPage(hash) :
+            <Home/>
+        }
     </RootContext.Provider >;
 };

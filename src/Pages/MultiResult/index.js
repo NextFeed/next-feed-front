@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
-import "./style.css";
 
 export default function () {
     const {
@@ -101,7 +100,7 @@ export default function () {
         <div 
             class="widebutton button"
             onClick={() => {
-                window.location.hash = "#tagresult";
+                window.location.hash = "tagresult";
             }}
         >
             <span class="return">
