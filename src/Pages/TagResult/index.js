@@ -9,10 +9,10 @@ export default function () {
         hash,
         screenW,
         screenH,
-        accountInfo,
+        tagAnalysisResult,
     } = useContext(RootContext);
 
-    console.log(accountInfo);
+    console.log(tagAnalysisResult);
 
     return <div
         style={{

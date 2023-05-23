@@ -34,7 +34,7 @@ export default function() {
 	const [tag, setTag] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [loadingRate, setLoadingRate] = useState(0);
-    const [accountInfo, setAccountInfo] = useState();
+    const [tagAnalysisResult, setTagAnalysisResult] = useState();
 
 	const onResize = () => {
         setScreenW(window.innerWidth);
@@ -70,8 +70,8 @@ export default function() {
         setIsLoading,
         loadingRate,
         setLoadingRate,
-        accountInfo,
-        setAccountInfo,
+        tagAnalysisResult,
+        setTagAnalysisResult,
     }}>
 		{
             isLoading ? 

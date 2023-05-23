@@ -11,7 +11,7 @@ export default function () {
         screenH,
         setIsLoading,
         setLoadingRate,
-        setAccountInfo,
+        setTagAnalysisResult,
     } = useContext(RootContext);
     const [tagInput, setTagInput] = useState("");
     const [isMale, setIsMale] = useState(true);
@@ -30,7 +30,7 @@ export default function () {
         setLoadingRate(0.5);
         
         // analysis
-        setAccountInfo({
+        setTagAnalysisResult({
             feature1: "cute",
             score1: 70.0,
             feature2: "pretty",
