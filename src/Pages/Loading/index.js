@@ -16,6 +16,7 @@ export default function () {
             width: screenW,
             height: screenH,
         }}
+        id="loading"
         className="fcc"
     >
         <span className="loading">

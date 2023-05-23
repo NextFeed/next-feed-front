@@ -9,30 +9,34 @@ export default function () {
         hash,
         screenW,
         screenH,
+        accountInfo,
     } = useContext(RootContext);
+
+    console.log(accountInfo);
 
     return <div
         style={{
             width: screenW,
             height: screenH,
         }}
+        id="tagresult"
         className="fsc"
     >
-        <div className="Rectangle-16 fcc">
+        <div className="titleTab fcc">
             <img
-                className="logo"
+                className="smallLogo"
                 src="Images/logo.png"
             />
-            <div className="fc tab">
+            <div className="fc titleRow">
                 <img 
-                    className="back button" 
+                    className="backButton button" 
                     src="Images/back.png" 
                     onClick={() => {
                         setTag("");
                         window.history.back();
                     }}
                 />
-                <span className="a-">
+                <span className="pageTitle">
                     계정 분석 결과
                 </span>
             </div>

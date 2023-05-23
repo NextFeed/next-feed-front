@@ -62,6 +62,8 @@ const getImgSrcs = async(browser, tag) => {
     } 
 
     //crawl data
+    const profileImg = await page.$("div._aarf img");
+    const profileImgSrc = await (await profileImg.getProperty("src")).jsonValue();
     let imgSrcs = [];
     const imgs = await page.$$("div._aagv img");
     for(let i=0; i<9 && i<imgs.length; i++) {
@@ -69,7 +71,10 @@ const getImgSrcs = async(browser, tag) => {
         const src = await (await img.getProperty("src")).jsonValue();
         imgSrcs.push(src);
     }
-    return imgSrcs;
+    return {
+        profile: profileImgSrc,
+        feeds: imgSrcs,
+    };
 }
 
 const get = async(request, response) => {
@@ -84,10 +89,10 @@ const get = async(request, response) => {
     
         await login(browser);
         await delay(delayMs);
-        const imgSrcs = await getImgSrcs(browser, tag);
+        const result = await getImgSrcs(browser, tag);
 
         browser.close();        
-        response.send(imgSrcs);
+        response.send(result);
     } catch(error) {
         console.log(error);
     }

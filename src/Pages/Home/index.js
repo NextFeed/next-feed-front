@@ -11,6 +11,7 @@ export default function () {
         screenH,
         setIsLoading,
         setLoadingRate,
+        setAccountInfo,
     } = useContext(RootContext);
     const [tagInput, setTagInput] = useState("");
     const [isMale, setIsMale] = useState(true);
@@ -19,11 +20,25 @@ export default function () {
         event.preventDefault();
         setTag(tagInput);
         setIsLoading(true);
+
+        // crawling
         setLoadingRate(0);
         // const apiBaseUrl = "http://localhost:3000";
         // const response = await fetch(`${apiBaseUrl}/api/tag?tag=${tagInput}`);
         // const result = await response.json();
+        // console.log(result);
         setLoadingRate(0.5);
+        
+        // analysis
+        setAccountInfo({
+            feature1: "cute",
+            score1: 70.0,
+            feature2: "pretty",
+            score2: 21.9,
+            feature3: "ugly",
+            score3: 8.1,
+        });
+
         window.location.hash = "tagresult";
         setLoadingRate(1);
         setIsLoading(false);
@@ -34,6 +49,7 @@ export default function () {
             width: screenW,
             height: screenH,
         }}
+        id="home"
         className="fcc"
     >
         <img className="Logo-1" src="Images/logo.png"/>

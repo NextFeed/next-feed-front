@@ -18,22 +18,23 @@ export default function () {
             width: screenW,
             height: screenH,
         }}
+        id="uploadone"
         className="fsc"
     >
-        <div className="Rectangle-16 fcc">
+        <div className="titleTab fcc">
             <img
-                className="logo"
+                className="smallLogo"
                 src="Images/logo.png"
             />
-            <div className="fc tab">
+            <div className="fc titleRow">
                 <img
-                    className="back button"
+                    className="backButton button"
                     src="Images/back.png"
                     onClick={() => {
                         window.history.back();
                     }}
                 />
-                <span className="a-">
+                <span className="pageTitle">
                     한 장 분석
                 </span>
             </div>

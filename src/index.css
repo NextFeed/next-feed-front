@@ -75,7 +75,7 @@ code {
 }
 
 
-.Rectangle-16 {
+.titleTab {
     width: 390px;
     height: 121px;
     /* margin: 0 0 77px; */
@@ -83,19 +83,19 @@ code {
     background-color: var(--white);
 }
 
-.logo {
+.smallLogo {
     width: 34px;
     height: 23px;
     /* margin: 0 58px 5px 123px; */
 }
 
-.tab {
+.titleRow {
     position: relative;
     width: 390px;
 }
 
 
-.back {
+.backButton {
     position: absolute;
     left: 0;
     width: 30px;
@@ -104,7 +104,7 @@ code {
     padding: 6.3px;
 }
 
-.a- {
+.pageTitle {
     width: 150px;
     height: 30px;
     /* margin: 5px 0 0 65px; */
