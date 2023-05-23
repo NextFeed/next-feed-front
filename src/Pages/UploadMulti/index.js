@@ -17,7 +17,7 @@ export default function () {
         }}
         className="fsc"
     >
-        <div class="Rectangle-16 fcc">
+        <div className="Rectangle-16 fcc">
             <img
                 className="logo"
                 src="Images/logo.png"

@@ -20,7 +20,7 @@ export default function () {
         }}
         className="fsc"
     >
-        <div class="Rectangle-16 fcc">
+        <div className="Rectangle-16 fcc">
             <img
                 className="logo"
                 src="Images/logo.png"
@@ -39,7 +39,7 @@ export default function () {
             </div>
         </div>
         <div 
-            class="Rectangle-10 fc button"
+            className="Rectangle-10 fc button"
             onClick={() => {
                 hiddenFileInput.current.click();
             }}
@@ -53,10 +53,10 @@ export default function () {
                     setUploadedFile(URL.createObjectURL(event.target.files[0]));
                 }}
             ></input>
-            <img class="uploadImage" src={uploadedFile || "Images/upload.png"} />
+            <img className="uploadImage" src={uploadedFile || "Images/upload.png"} />
         </div>
         <div 
-            class={"Frame-24 fc button " + (uploadedFile ? "active" : "disabled")}
+            className={"Frame-24 fc button " + (uploadedFile ? "active" : "disabled")}
             onClick={() => {
                 if(uploadedFile) {
                     window.location.hash = "oneresult";
@@ -66,7 +66,7 @@ export default function () {
                 }
             }}
         >
-            <span class="analysis">
+            <span className="analysis">
                 분석하기
             </span>
         </div>
