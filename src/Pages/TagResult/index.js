@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
+import Graph from "../../Components/Graph.js";
 
 
 export default function () {
@@ -10,9 +11,20 @@ export default function () {
         screenW,
         screenH,
         tagAnalysisResult,
+        setTagAnalysisResult,
     } = useContext(RootContext);
 
-    console.log(tagAnalysisResult);
+    //temp backend mock
+    useEffect(() => {
+        setTagAnalysisResult({
+            feature1: "cute",
+            score1: 70.3,
+            feature2: "pretty",
+            score2: 21.6,
+            feature3: "ugly",
+            score3: 8.1,
+        });
+    }, []);
 
     return <div
         style={{
@@ -42,58 +54,32 @@ export default function () {
             </div>
         </div>
         <div className="resultrect fcc">
-            <span className="CUTE-78">
-                {accountInfo.feature1.toUpperCase()} 
-                {+ " " + accountInfo.score1 + "%"}
-            </span>
-            <span className="-CUTE- _">
-                당신의 계정은
-                <br />
-                <span className="_">{accountInfo.feature1.toUpperCase()}</span>
-                한 매력을 보여주고 있네요!
-            </span>
-            <div className="Frame-11">
-                <div className="Rectangle-5 fc">
-                    {tag}
-                </div>
-                <div className="Group-8">
-                    <div className="Frame-9">
-                        <span className="CUTE _">
-                            {accountInfo.feature1.charAt(0).toUpperCase() + accountInfo.feature1.slice(1)}
-                        </span>
-                        <span className="PRETTY _">
-                            {accountInfo.feature2.charAt(0).toUpperCase() + accountInfo.feature2.slice(1)}
-                        </span>
-                        <span className="PURE _">
-                            {accountInfo.feature3.charAt(0).toUpperCase() + accountInfo.feature3.slice(1)}
-                        </span>
+            {
+                tagAnalysisResult &&
+                <>
+                <span className="CUTE-78">
+                    {tagAnalysisResult.feature1.toUpperCase() + " " + tagAnalysisResult.score1 + "%"}
+                </span>
+                <span className="-CUTE- _">
+                    당신의 계정은
+                    <br />
+                    <span className="_">{tagAnalysisResult.feature1.toUpperCase()}</span>
+                    한 매력을 보여주고 있네요!
+                </span>
+                <div className="Frame-11">
+                    <div className="Rectangle-5 fc">
+                        {tag}
                     </div>
-                    <div className="Frame-8">
-                        <div className="Frame-5">
-                            <div className="indexs fb">
-                                <div className="fcc">
-                                    <span className="index0">
-                                        0
-                                    </span>
-                                    <div className="Line-3"></div>
-                                </div>
-                                <div className="fcc">
-                                    <span className="index0">
-                                        50
-                                    </span>
-                                    <div className="Line-3"></div>
-                                </div>
-                                <div className="fcc">
-                                    <span className="index0">
-                                        100
-                                    </span>
-                                    <div className="Line-3"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="Group-8">
+                        <Graph 
+                            graphW={220} 
+                            graphH={119} 
+                            analysisResult={tagAnalysisResult}
+                        />
                     </div>
                 </div>
-            </div>
+                </>
+            }
         </div>
         <span className="share fc">
             결과 공유하기

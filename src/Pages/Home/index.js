@@ -29,15 +29,6 @@ export default function () {
         // console.log(result);
         setLoadingRate(0.5);
         
-        // analysis
-        setTagAnalysisResult({
-            feature1: "cute",
-            score1: 70.0,
-            feature2: "pretty",
-            score2: 21.9,
-            feature3: "ugly",
-            score3: 8.1,
-        });
 
         window.location.hash = "tagresult";
         setLoadingRate(1);

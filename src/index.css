@@ -45,6 +45,22 @@ code {
     flex-direction: column;
 }
 
+/* flex between column direction */
+.fbc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* flex between start column direction */
+.fbsc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
 /* flex start */
 .fs {
     display: flex;
@@ -564,7 +580,7 @@ input.submit {
 }
 
 .CUTE-78 {
-    width: 148px;
+    width: 300px;
     height: 35px;
     flex-grow: 0;
     font-family: Inter;
@@ -603,6 +619,76 @@ input.submit {
     flex-grow: 0;
 }
 
+
+.graph .lengthlabel div {
+    width: 17px;
+    height: 8px;
+    flex-grow: 0;
+    font-family: Inter;
+    font-size: 7px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--grey-3);
+}
+
+.graph .featurelabel div {
+    width: 48px;
+    height: 15px;
+    flex-grow: 0;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--grey-3);
+}
+
+.graph .primaryColor {
+    color: var(--main) !important;
+}
+
+.graph .primaryBackground {
+    background-color: var(--main) !important;
+}
+
+.graph .figline div {
+    width: 1px;
+    height: 110px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: var(--grey-1);
+}
+
+.graph .bar {
+    width: 125px;
+    height: 14px;
+    flex-grow: 0;
+    background-color: var(--grey-3);
+}
+
+.graph .num {
+    margin-left: 3px;
+    width: 17px;
+    height: 10px;
+    flex-grow: 0;
+    font-family: Inter;
+    font-size: 8px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--grey-3);
+}
+
 .Frame-11 {
     width: 330px;
     height: 119px;
@@ -623,31 +709,6 @@ input.submit {
     background-color: var(--grey-1);
 }
 
-.Frame-8 {
-    width: 177px;
-    height: 119px;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1px;
-    margin: 0 0 0 43px;
-    padding: 0;
-}
-
-.Frame-9 {
-    width: 48px;
-    height: 91px;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 23px;
-    padding: 0;
-}
-
 .Frame-6 {
     width: 145px;
     height: 88px;
@@ -658,85 +719,6 @@ input.submit {
     align-items: flex-start;
     gap: 23px;
     padding: 0;
-}
-
-.CUTE {
-    width: 34px;
-    height: 15px;
-    flex-grow: 0;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: var(--main);
-}
-
-.PRETTY {
-    width: 48px;
-    height: 15px;
-    flex-grow: 0;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: var(--grey-3);
-}
-
-.PURE {
-    width: 32px;
-    height: 15px;
-    flex-grow: 0;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: var(--grey-3);
-}
-
-.Frame-5 {
-    width: 160px;
-    height: 110px;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 80px;
-    padding: 0;
-}
-
-.Line-3 {
-    width: 1px;
-    height: 110px;
-    flex-grow: 0;
-    background-color: var(--grey-1);
-}
-
-.index0 {
-    width: 11px;
-    height: 8px;
-    flex-grow: 0;
-    font-family: Inter;
-    font-size: 7px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: var(--grey-3);
 }
 
 .share {
