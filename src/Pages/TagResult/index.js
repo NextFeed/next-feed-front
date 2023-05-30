@@ -49,8 +49,8 @@ export default function () {
             <span className="-CUTE- _">
                 당신의 계정은
                 <br />
-                <span className="_">{accountInfo.feature1}</span>
-                매력을 보여주고 있네요!
+                <span className="_">{accountInfo.feature1.toUpperCase()}</span>
+                한 매력을 보여주고 있네요!
             </span>
             <div className="Frame-11">
                 <div className="Rectangle-5 fc">
@@ -59,13 +59,13 @@ export default function () {
                 <div className="Group-8">
                     <div className="Frame-9">
                         <span className="CUTE _">
-                            {accountInfo.feature1}
+                            {accountInfo.feature1.charAt(0).toUpperCase() + accountInfo.feature1.slice(1)}
                         </span>
                         <span className="PRETTY _">
-                            {accountInfo.feature2}
+                            {accountInfo.feature2.charAt(0).toUpperCase() + accountInfo.feature2.slice(1)}
                         </span>
                         <span className="PURE _">
-                            {accountInfo.feature3}
+                            {accountInfo.feature3.charAt(0).toUpperCase() + accountInfo.feature3.slice(1)}
                         </span>
                     </div>
                     <div className="Frame-8">
