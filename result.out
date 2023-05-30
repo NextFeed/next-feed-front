@@ -1,0 +1,29 @@
+Server PORT: 4000
+Error: ENOENT: no such file or directory, stat '/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/build/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/build/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/build/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/build/index.html'
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/next-feed-front/node_modules/express/lib/application.js:635:24)
+    at file:///Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/next-feed-front/server/index.js:19:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 4000
+}
+
+Node.js v18.16.0
+Error: ENOENT: no such file or directory, stat '/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/build/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/umin/Desktop/Yumin/SNU_Class/2023-1/HCI/Nextfeed_front/build/index.html'
