@@ -43,12 +43,13 @@ export default function () {
         </div>
         <div className="resultrect fcc">
             <span className="CUTE-78">
-                CUTE 78%
+                {accountInfo.feature1.toUpperCase()} 
+                {+ " " + accountInfo.score1 + "%"}
             </span>
             <span className="-CUTE- _">
                 당신의 계정은
                 <br />
-                <span className="_">CUTE(귀여운)</span>
+                <span className="_">{accountInfo.feature1}</span>
                 매력을 보여주고 있네요!
             </span>
             <div className="Frame-11">
@@ -58,13 +59,13 @@ export default function () {
                 <div className="Group-8">
                     <div className="Frame-9">
                         <span className="CUTE _">
-                            CUTE
+                            {accountInfo.feature1}
                         </span>
                         <span className="PRETTY _">
-                            PRETTY
+                            {accountInfo.feature2}
                         </span>
                         <span className="PURE _">
-                            PURE
+                            {accountInfo.feature3}
                         </span>
                     </div>
                     <div className="Frame-8">
