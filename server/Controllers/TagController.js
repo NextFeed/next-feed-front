@@ -71,6 +71,12 @@ const getImgSrcs = async(browser, tag) => {
         profileElem = await page.$("div._aadm img");
         console.log(tag);
     }
+    if(!profileElem) {
+        return {
+            ok: false,
+            message: "존재하지 않는 계정입니다.",
+        }
+    }
     
     const profileImg = await profileElem.screenshot({
         encoding: "base64",
@@ -99,10 +105,11 @@ const getImgSrcs = async(browser, tag) => {
 
 
     const result = {
+        ok: true,
         profileImg: profileImg,
         feedImgs: feedImgs,
     };
-    console.log(result);
+    // console.log(result);
     
     return result;
 }

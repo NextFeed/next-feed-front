@@ -15,17 +15,6 @@ export default function () {
         accountInfo,
     } = useContext(RootContext);
 
-    //temp backend mock
-    useEffect(() => {
-        setTagAnalysisResult({
-            feature1: "cute",
-            score1: 70.3,
-            feature2: "pretty",
-            score2: 21.6,
-            feature3: "ugly",
-            score3: 8.1,
-        });
-    }, []);
 
     return <div
         style={{
