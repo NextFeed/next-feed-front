@@ -35,8 +35,13 @@ export default function() {
 	// const [tag, setTag] = useState("aa");
     const [isLoading, setIsLoading] = useState(false);
     const [loadingRate, setLoadingRate] = useState(0);
+    const [isMale, setIsMale] = useState(true);
     const [accountInfo, setAccountInfo] = useState();
     const [tagAnalysisResult, setTagAnalysisResult] = useState();
+    const [oneImg, setOneImg] = useState();
+    const [multiImgs, setMultiImgs] = useState();
+    const [OneResult, setOneResult] = useState();
+    const [multiResults, setMultiResults] = useState();
 
 	const onResize = () => {
         setScreenW(window.innerWidth);
@@ -72,10 +77,20 @@ export default function() {
         setIsLoading,
         loadingRate,
         setLoadingRate,
+        isMale,
+        setIsMale,
         accountInfo, 
         setAccountInfo,
         tagAnalysisResult,
         setTagAnalysisResult,
+        oneImg,
+        setOneImg,
+        multiImgs,
+        setMultiImgs,
+        OneResult,
+        setOneResult,
+        multiResults,
+        setMultiResults,
     }}>
 		{
             isLoading ? 
