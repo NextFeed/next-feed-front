@@ -12,6 +12,7 @@ export default function () {
         screenH,
         tagAnalysisResult,
         setTagAnalysisResult,
+        accountInfo,
     } = useContext(RootContext);
 
     //temp backend mock
@@ -68,7 +69,15 @@ export default function () {
                 </span>
                 <div className="Frame-11">
                     <div className="Rectangle-5 fc">
-                        {tag}
+                        {
+                            accountInfo ?
+                            <img 
+                                src={"data:image/png;base64," + accountInfo.profileImg} 
+                                className="" 
+                                alt={tag}
+                            /> :
+                            tag
+                        }
                     </div>
                     <div className="Group-8">
                         <Graph 

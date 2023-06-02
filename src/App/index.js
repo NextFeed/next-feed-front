@@ -32,8 +32,10 @@ export default function() {
     const [screenH, setScreenH] = useState(window.innerHeight);
 	const [hash, setHash] = useState(window.location.hash);
 	const [tag, setTag] = useState("");
+	// const [tag, setTag] = useState("aa");
     const [isLoading, setIsLoading] = useState(false);
     const [loadingRate, setLoadingRate] = useState(0);
+    const [accountInfo, setAccountInfo] = useState();
     const [tagAnalysisResult, setTagAnalysisResult] = useState();
 
 	const onResize = () => {
@@ -70,6 +72,8 @@ export default function() {
         setIsLoading,
         loadingRate,
         setLoadingRate,
+        accountInfo, 
+        setAccountInfo,
         tagAnalysisResult,
         setTagAnalysisResult,
     }}>

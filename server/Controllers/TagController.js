@@ -1,8 +1,11 @@
 import puppeteer from "puppeteer";
 import { delay } from "../Utils/Functions.js";
 
+const isDev = false;
+
 const delayMs = 7000;
 const loginUrl = "https://www.instagram.com/accounts/login/";
+
 
 
 const login = async(browser) => {
@@ -33,6 +36,7 @@ const login = async(browser) => {
 
 const getImgSrcs = async(browser, tag) => {
     const url = `https://www.instagram.com/${tag}/`;
+    console.log(url);
 
     const page = await browser.newPage();
 
@@ -43,38 +47,64 @@ const getImgSrcs = async(browser, tag) => {
         height: 600,
     });
 
-    const result = await page.goto(url, {
+    const response = await page.goto(url, {
         waitUntil: 'networkidle0',
         //waitUntil: 'networkidle2',
         //waitUntil: 'load',
         //waitUntil: 'domcontentloaded',
     });
     
-    if(result.status() === 404) {
+    if(response.status() === 404) {
         browser.close();
         console.log("This account doesn't exist");
         return;
     } 
-    else if(result.status() === 429) {
+    else if(response.status() === 429) {
         browser.close();
         console.log('Too many requests');
         return;
     } 
 
     //crawl data
-    const profileImg = await page.$("div._aarf img");
-    const profileImgSrc = await (await profileImg.getProperty("src")).jsonValue();
-    let imgSrcs = [];
-    const imgs = await page.$$("div._aagv img");
-    for(let i=0; i<9 && i<imgs.length; i++) {
-        const img = imgs[i];
-        const src = await (await img.getProperty("src")).jsonValue();
-        imgSrcs.push(src);
+    let profileElem = await page.$("canvas._aarh");
+    if(!profileElem) {
+        profileElem = await page.$("div._aadm img");
+        console.log(tag);
     }
-    return {
-        profile: profileImgSrc,
-        feeds: imgSrcs,
+    
+    const profileImg = await profileElem.screenshot({
+        encoding: "base64",
+    });
+    
+    const feedElems = await page.$$("div._aagv img");
+    let feedImgPromises = [];
+    for(let i=0; i<9 && i<feedElems.length; i++) {
+        const elem = feedElems[i];
+        const imgPromise = elem.screenshot({
+            encoding: "base64",
+        });
+        feedImgPromises.push(imgPromise);
+    }
+    const feedImgs = await Promise.all(feedImgPromises);
+
+
+    // const profileImgSrc = await (await profileImg.getProperty("src")).jsonValue();
+    // let imgSrcs = [];
+    // for(let i=0; i<9 && i<imgs.length; i++) {
+    //     const img = imgs[i];
+    //     const src = await (await img.getProperty("src")).jsonValue();
+    //     imgSrcs.push(src);
+    // }
+
+
+
+    const result = {
+        profileImg: profileImg,
+        feedImgs: feedImgs,
     };
+    console.log(result);
+    
+    return result;
 }
 
 const get = async(request, response) => {
@@ -83,15 +113,14 @@ const get = async(request, response) => {
     try {
         //run browser
         const browser = await puppeteer.launch({
-            headless: "new",
-            // headless: false,
+            headless: isDev ? false : "new",
         });
     
         await login(browser);
         await delay(delayMs);
         const result = await getImgSrcs(browser, tag);
 
-        browser.close();        
+        browser.close();
         response.send(result);
     } catch(error) {
         console.log(error);
