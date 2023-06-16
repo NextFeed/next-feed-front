@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
+import { apiBaseUrl } from "../../Utils/Constants.js";
 
 export default function () {
     const {
@@ -13,6 +14,7 @@ export default function () {
         setIsLoading,
         setLoadingRate,
         setOneResult,
+        isMale,
     } = useContext(RootContext);
 
     const hiddenFileInput = useRef(null);
@@ -22,21 +24,24 @@ export default function () {
         setIsLoading(true);
         setLoadingRate(0.5);
 
-        // const reqUrl = `${apiBaseUrl}/analyze/image/`;
-        // const body = {
-        //     type: isMale ? "male" : "female",
-        //     img: oneImg,
-        // }
-        // const response = await fetch(reqUrl, {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Accept': 'application/json',
-        //     },
-        //     body: JSON.stringify(body),
-        // });
-        // const oneResult = await response.json();
-        // setOneResult(oneResult); 
+        const reqUrl = `${apiBaseUrl}/analyze/image/`;
+        const body = {
+            type: isMale ? "male" : "female",
+            img: oneImg,
+        }
+        const response = await fetch(reqUrl, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify(body),
+        });
+
+        const oneResult = await response.json();
+        setOneResult(oneResult); 
+        setLoadingRate(1.0);
+        setIsLoading(false);
 
         window.location.hash = "oneresult";
     };
@@ -44,7 +49,6 @@ export default function () {
     return <div
         style={{
             width: screenW,
-            height: screenH,
         }}
         id="uploadone"
         className="fsc"
@@ -85,7 +89,6 @@ export default function () {
                     reader.readAsDataURL(event.target.files[0]);
                     
                     reader.onload = () => {
-                        console.log(reader.result.split(',')[1]);
                         setUploadedFile(reader.result);
                         setOneImg(reader.result.split(',')[1]);
                     };

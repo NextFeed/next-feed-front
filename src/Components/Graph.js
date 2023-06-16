@@ -3,7 +3,7 @@ export default function({
     graphH,
     analysisResult,
 }) {
-    const featureLabelW = 50;
+    const featureLabelW = 80;
     const lengthLabelH = 10;
     const lengthLabelW = graphW - featureLabelW;
     const featureLabelH = graphH - lengthLabelH;

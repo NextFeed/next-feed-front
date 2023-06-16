@@ -1,17 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
 import Graph from "../../Components/Graph.js";
+import BottomNavigator from "../../Components/BottomNavigator.js";
 
 
 export default function () {
     const {
         tag,
         setTag,
-        hash,
         screenW,
         screenH,
         tagAnalysisResult,
-        setTagAnalysisResult,
         accountInfo,
     } = useContext(RootContext);
 
@@ -19,7 +18,6 @@ export default function () {
     return <div
         style={{
             width: screenW,
-            height: screenH,
         }}
         id="tagresult"
         className="fsc"
@@ -43,31 +41,25 @@ export default function () {
                 </span>
             </div>
         </div>
-        <div className="resultrect fcc">
-            {
-                tagAnalysisResult &&
-                <>
-                <span className="CUTE-78">
-                    {tagAnalysisResult.feature1.toUpperCase() + " " + tagAnalysisResult.score1 + "%"}
+        {
+            tagAnalysisResult &&
+            <div className="resultrect">
+                <span className="-CUTE-">
+                    {tagAnalysisResult.feature1.toUpperCase()} {tagAnalysisResult.score1}%
                 </span>
-                <span className="-CUTE- _">
-                    당신의 계정은
-                    <br />
-                    <span className="_">{tagAnalysisResult.feature1.toUpperCase()}</span>
-                    한 매력을 보여주고 있네요!
-                </span>
+                <div className="onekorcute fs">
+                    당신의 매력: {tagAnalysisResult.feature1.toUpperCase()} 
+                </div>
                 <div className="Frame-11">
-                    <div className="Rectangle-5 fc">
-                        {
-                            accountInfo ?
-                            <img 
-                                src={"data:image/png;base64," + accountInfo.profileImg} 
-                                className="" 
-                                alt={tag}
-                            /> :
-                            tag
-                        }
-                    </div>
+                    {
+                        accountInfo ?
+                        <img 
+                            src={"data:image/png;base64," + accountInfo.profileImg} 
+                            className="profileimage"
+                            alt={tag}
+                        /> :
+                        tag
+                    }
                     <div className="Group-8">
                         <Graph 
                             graphW={220} 
@@ -76,9 +68,8 @@ export default function () {
                         />
                     </div>
                 </div>
-                </>
-            }
-        </div>
+            </div>
+        }
         <span className="share fc">
             결과 공유하기
         </span>
@@ -86,46 +77,9 @@ export default function () {
             <img className="image-1 button" src="Images/insta.png"/>
             <img className="image-2 button" src="Images/kakao.png"/>
         </div>
-        <div className="addImage fcc">
-            <span className="AIanalysys">
-                AI가 사진도 분석해드려요!
-            </span>
-            <div className="Line-2"></div>
-            <div className="Frame-27 fb">
-                <div 
-                    className="oneImage button"
-                    onClick={() => {
-                        window.location.hash = "uploadone";
-                    }}
-                >
-                    <span className="howmuchcute">
-                        다른 사진은
-                        <br/>
-                        몇 %
-                        <span className="muchcute"> 귀여울</span>까?
-                    </span>
-                    <span className="oneanalysis">
-                        한 장 분석
-                    </span>
-                </div>
-                <div 
-                    className="multiImage button"
-                    onClick={() => {
-                        window.location.hash = "uploadmulti";
-                    }}
-                >
-                    <span className="mostcutefind">
-                        내 사진 중
-                        <br/>
-                        가장
-                        <span className="mostcute"> 귀여운 </span>
-                        사진 찾기
-                    </span>
-                    <span className="multianalysis">
-                        여러 장 분석
-                    </span>
-                </div>
-            </div>
-        </div>
+        <BottomNavigator 
+            text="AI가 사진도 분석해드려요!" 
+            analysisResult={tagAnalysisResult}
+        />
     </div>;
 };

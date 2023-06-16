@@ -1,19 +1,23 @@
 import { useContext, useEffect, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
+import Graph from "../../Components/Graph.js";
+import BottomNavigator from "../../Components/BottomNavigator.js";
+import WideButton from "../../Components/WideButton.js";
 
 export default function () {
     const {
-        tag,
-        setTag,
-        hash,
         screenW,
         screenH,
+        oneImg,
+        oneResult,
+        tagAnalysisResult,
     } = useContext(RootContext);
+
+    const isFit = tagAnalysisResult?.feature1 == oneResult?.feature1;
 
     return <div
         style={{
             width: screenW,
-            height: screenH,
         }}
         id="oneresult"
         className="fsc"
@@ -36,20 +40,27 @@ export default function () {
                 </span>
             </div>
         </div>
-        <div className="Frame-21 fb">
-            <div className="oneimage"></div>
-            <div className="fcc">
+        {
+            oneResult &&
+            <div className="fsc">
                 <span className="onecute">
-                    CUTE
+                    {oneResult.feature1.toUpperCase()} {oneResult.score1}%
                 </span>
-                <span className="percent">
-                    70%
+                <div className="onekorcute fc">
+                    이 사진의 매력: {oneResult.feature1.toUpperCase()} 
+                </div>
+                <img 
+                    className="oneimage"
+                    src={"data:image/png;base64," + oneImg}
+                />
+                <Graph graphW={280} graphH={119} analysisResult={oneResult}/>
+                <span className="fit">
+                    {isFit ? "당신의 계정과 잘 어울리네요!" : "색다른 매력의 사진이네요."}
+                    <br/>
+                    {isFit ? "피드 대표사진으로 올려봐요.": "한 번 도전해볼래요?"}
                 </span>
             </div>
-        </div>
-        <span className="fit">
-            당신의 계정과 잘 어울리네요!
-        </span>
+        }
         <span className="share fc">
             결과 공유하기
         </span>
@@ -57,66 +68,21 @@ export default function () {
             <img className="image-1 button" src="Images/insta.png" />
             <img className="image-2 button" src="Images/kakao.png" />
         </div>
-        <div className="addImage fcc">
-            <span className="AIanalysys">
-                다른 사진 분석하기
-            </span>
-            <div className="Line-2"></div>
-            <div className="Frame-27 fb">
-                <div
-                    className="oneImage button"
-                    onClick={() => {
-                        window.location.hash = "uploadone";
-                    }}
-                >
-                    <span className="howmuchcute">
-                        다른 사진은
-                        <br />
-                        몇 %
-                        <span className="muchcute"> 귀여울</span>까?
-                    </span>
-                    <span className="oneanalysis">
-                        한 장 분석
-                    </span>
-                </div>
-                <div
-                    className="multiImage button"
-                    onClick={() => {
-                        window.location.hash = "uploadmulti";
-                    }}
-                >
-                    <span className="mostcutefind">
-                        내 사진 중
-                        <br />
-                        가장
-                        <span className="mostcute"> 귀여운 </span>
-                        사진 찾기
-                    </span>
-                    <span className="multianalysis">
-                        여러 장 분석
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div 
-            className="widebutton button"
+        <BottomNavigator 
+            text="다른 사진 분석하기" 
+            analysisResult={oneResult}
+        />
+        <WideButton 
+            text="Instagram 결과로 돌아가기"
             onClick={() => {
                 window.location.hash = "tagresult";
             }}
-        >
-            <span className="return">
-                Instagram 결과로 돌아가기
-            </span>
-        </div>
-        <div 
-            className="widebutton button"
+        />
+        <WideButton 
+            text="처음으로"
             onClick={() => {
                 window.location.hash = "";
             }}
-        >
-            <span className="return">
-                처음으로
-            </span>
-        </div>
+        />
     </div>;
 };

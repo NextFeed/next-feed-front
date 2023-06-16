@@ -35,12 +35,12 @@ export default function() {
 	// const [tag, setTag] = useState("aa");
     const [isLoading, setIsLoading] = useState(false);
     const [loadingRate, setLoadingRate] = useState(0);
-    const [isMale, setIsMale] = useState(true);
+    const [isMale, setIsMale] = useState(false);
     const [accountInfo, setAccountInfo] = useState();
     const [tagAnalysisResult, setTagAnalysisResult] = useState();
     const [oneImg, setOneImg] = useState();
     const [multiImgs, setMultiImgs] = useState();
-    const [OneResult, setOneResult] = useState();
+    const [oneResult, setOneResult] = useState();
     const [multiResults, setMultiResults] = useState();
 
 	const onResize = () => {
@@ -87,7 +87,7 @@ export default function() {
         setOneImg,
         multiImgs,
         setMultiImgs,
-        OneResult,
+        oneResult,
         setOneResult,
         multiResults,
         setMultiResults,

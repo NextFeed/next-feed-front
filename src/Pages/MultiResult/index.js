@@ -13,7 +13,6 @@ export default function () {
     return <div
         style={{
             width: screenW,
-            height: screenH,
         }}
         id="multiresult"
         className="fsc"

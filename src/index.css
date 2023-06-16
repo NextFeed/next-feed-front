@@ -17,6 +17,7 @@ code {
     --black-1: #1a1a1a;
     --grey-6: #666;
     --grey-3: #b3b3b3;
+    --grey-4: #cccccc;
     --grey-0-5: #f2f2f2;
     --grey-1: #e6e6e6;
     --white: #fff;
@@ -356,7 +357,6 @@ input.submit {
 }
 
 .progresscontainer {
-    width: 288px;
     height: 10px;
     flex-grow: 0;
     margin: 18px 0 0;
@@ -366,18 +366,9 @@ input.submit {
 }
 
 .progress {
-
-    width: 16px;
     height: 10px;
     flex-grow: 0;
     background-image: linear-gradient(58deg, #ffe144 1%, #f93560 40%, #da21b0 67%, #585acb 100%);
-}
-
-
-
-.Frame-21 {
-    width: 280px;
-    height: 150px;
 }
 
 .Frame-20 {
@@ -388,13 +379,16 @@ input.submit {
 .oneimage {
     width: 150px;
     height: 150px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     flex-grow: 0;
     border-radius: 20px;
     background-image: linear-gradient(136deg, #dadada 5%, #e8e8e8 97%);
+    object-fit: contain;
 }
 
 .onecute {
-    width: 81px;
+    width: 300px;
     height: 35px;
     flex-grow: 0;
     font-family: Inter;
@@ -406,6 +400,21 @@ input.submit {
     letter-spacing: normal;
     text-align: center;
     color: var(--main);
+}
+
+.onekorcute {
+    width: 300px;
+    height: 18px;
+    flex-grow: 0;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.75px;
+    text-align: left;
+    color: var(--grey-4);
 }
 
 
@@ -448,7 +457,7 @@ input.submit {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 26px 27px 0 14px;
+    margin-bottom: 25px;
     /* padding: 14px 66px; */
     border-radius: 20px;
     background-image: linear-gradient(78deg, #ffe144 2%, #f93560 40%, #da21b0 67%, #585acb 100%);
@@ -488,21 +497,6 @@ input.submit {
     background-image: linear-gradient(136deg, #dadada 5%, #e8e8e8 97%);
 }
 
-.onecute {
-    width: 81px;
-    height: 35px;
-    flex-grow: 0;
-    font-family: Inter;
-    font-size: 29px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: var(--main);
-}
-
 
 .percent {
     width: 62px;
@@ -532,21 +526,6 @@ input.submit {
     letter-spacing: normal;
     text-align: center;
     color: var(--black-1);
-}
-
-.widebutton {
-    width: 319px;
-    height: 65px;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 26px 27px 0 14px;
-    /* padding: 14px 66px; */
-    border-radius: 20px;
-    background-image: linear-gradient(78deg, #ffe144 2%, #f93560 40%, #da21b0 67%, #585acb 100%);
 }
 
 .return {
@@ -567,7 +546,7 @@ input.submit {
 
 .resultrect {
     width: 360px;
-    height: 232px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -595,18 +574,18 @@ input.submit {
 }
 
 .-CUTE- {
-    width: 299px;
-    height: 44px;
-    flex-grow: 0;
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: var(--black-1);
+    width: 300px;
+  height: 35px;
+  flex-grow: 0;
+  font-family: Inter;
+  font-size: 29px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--main);
 }
 
 .-CUTE- ._ {
@@ -701,8 +680,12 @@ input.submit {
     padding: 0;
 }
 
-.Rectangle-5 {
-    flex-grow: 0;
+.profileimage {
+    object-fit: contain;
+    width: 100px;
+  height: 100px;
+  flex-grow: 0;
+  border-radius: 50%;
 }
 
 .Frame-6 {
@@ -752,7 +735,7 @@ input.submit {
     width: 360px;
     height: 312px;
     gap: 30px;
-    margin: 60px 0 0 0;
+    margin: 60px 0 40px 0;
     /* padding: 30px 15px 50px; */
     border-radius: 20px;
     border: solid 1px var(--grey-3);
@@ -800,8 +783,8 @@ input.submit {
 }
 
 .howmuchcute {
-    width: 78px;
-    height: 30px;
+    width: 125px;
+    margin-bottom: 5px;
     flex-grow: 0;
     font-family: Inter;
     font-size: 12px;
@@ -848,8 +831,8 @@ input.submit {
 }
 
 .mostcutefind {
-    width: 109px;
-    height: 30px;
+    width: 125px;
+    margin-bottom: 5px;
     flex-grow: 0;
     font-family: Inter;
     font-size: 12px;

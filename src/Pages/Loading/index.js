@@ -11,6 +11,8 @@ export default function () {
         loadingRate,
     } = useContext(RootContext);
 
+    const progressW = 288;
+
     return <div
         style={{
             width: screenW,
@@ -26,8 +28,18 @@ export default function () {
             <div className="progresspercent">
                 {loadingRate * 100}%
             </div>
-            <div className="progresscontainer">
-                <div className="progress">
+            <div 
+                className="progresscontainer"
+                style={{
+                    width: progressW,
+                }}
+            >
+                <div 
+                    className="progress"
+                    style={{
+                        width: progressW * loadingRate,
+                    }}
+                >
                 </div>
             </div>
         </div>
