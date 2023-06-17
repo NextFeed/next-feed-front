@@ -24,22 +24,29 @@ export default function () {
         setIsLoading(true);
         setLoadingRate(0.5);
 
-        const reqUrl = `${apiBaseUrl}/analyze/image/`;
-        const body = {
-            type: isMale ? "male" : "female",
-            img: oneImg,
+        try {
+            const reqUrl = `${apiBaseUrl}/analyze/image/`;
+            const body = {
+                type: isMale ? "male" : "female",
+                img: oneImg,
+            }
+            const response = await fetch(reqUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(body),
+            });
+    
+            const oneResult = await response.json();
+            setOneResult(oneResult); 
+        } catch(error) {
+            console.log(error);
+            alert("분석 서버 오류: " + error.message);
+            setIsLoading(false);
+            return;
         }
-        const response = await fetch(reqUrl, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify(body),
-        });
-
-        const oneResult = await response.json();
-        setOneResult(oneResult); 
         setLoadingRate(1.0);
         setIsLoading(false);
 
