@@ -10,19 +10,19 @@ import Loading from "../Pages/Loading/index.js";
 
 const hashToPage = (hash) => {
     if(hash === "#tagresult") {
-        return <TagResult/>
+        return <TagResult/>;
     }
     if(hash === "#uploadone") {
-        return <UploadOne/>
+        return <UploadOne/>;
     }
     if(hash === "#oneresult") {
-        return <OneResult/>
+        return <OneResult/>;
     }
     if(hash === "#uploadmulti") {
-        return <UploadMulti/>
+        return <UploadMulti/>;
     }
     if(hash === "#multiresult") {
-        return <MultiResult/>
+        return <MultiResult/>;
     }
 	return <Home/>;
 };
@@ -34,6 +34,7 @@ export default function() {
 	const [tag, setTag] = useState("");
 	// const [tag, setTag] = useState("aa");
     const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(true);
     const [loadingRate, setLoadingRate] = useState(0);
     const [isMale, setIsMale] = useState(false);
     const [accountInfo, setAccountInfo] = useState();
@@ -42,7 +43,7 @@ export default function() {
     const [multiImgs, setMultiImgs] = useState();
     const [oneResult, setOneResult] = useState();
     const [multiResults, setMultiResults] = useState();
-    const [loadingText, setLoadingText] = useState("");
+    const [loadingText, setLoadingText] = useState("로딩중");
 
 
 	const onResize = () => {

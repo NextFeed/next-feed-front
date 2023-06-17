@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { ColorRing } from  'react-loader-spinner';
 import { RootContext } from '../../Utils/Contexts.js';
 
 let cnt = 0;
@@ -7,7 +8,6 @@ export default function () {
     const {
         screenW,
         screenH,
-        loadingRate,
         loadingText, 
     } = useContext(RootContext);
 
@@ -16,14 +16,14 @@ export default function () {
     useEffect(() => {
         const interval = setInterval(() => {
             setIteration(cnt++);
-        }, 500);
+        }, 400);
 
         return () => {
             clearInterval(interval);
         };
     }, []);
 
-    const progressW = 288;
+    const dotN = iteration % 3 + 1;
 
     return <div
         style={{
@@ -34,26 +34,23 @@ export default function () {
         className="fcc"
     >
         <span className="loading fc">
-            {loadingText}{".".repeat(iteration % 3 + 1)}
+            {loadingText}
+            {".".repeat(dotN)}<div className="transparent">{".".repeat(3 - dotN)}</div>
         </span>
-        <div className="progressbar">
-            <div className="progresspercent">
-                {loadingRate * 100}%
-            </div>
-            <div 
-                className="progresscontainer"
-                style={{
-                    width: progressW,
-                }}
-            >
-                <div 
-                    className="progress"
-                    style={{
-                        width: progressW * loadingRate,
-                    }}
-                >
-                </div>
-            </div>
-        </div>
+        <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={[
+                '#f93560',
+                '#da21b0',
+                '#e96163',
+                '#585acb',
+                '#873cb9',
+            ]}
+        />
     </div>;
 };

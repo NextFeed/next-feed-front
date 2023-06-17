@@ -120,7 +120,7 @@ export default function () {
     const [isCollapsed, setIsCollapsed] = useState(true);
     const [sortedMultiResults, setSortedMultiResults] = useState([]);
 
-    const firstFeature = tagAnalysisResult.feature1;
+    const firstFeature = tagAnalysisResult?.feature1 || "";
     useEffect(() => {
         if(!multiResults || multiResults.length === 0) {
             return;

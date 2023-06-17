@@ -336,6 +336,10 @@ input.submit {
     color: #000;
 }
 
+.transparent {
+    color: transparent;
+}
+
 
 .progressbar {
     position: relative;
