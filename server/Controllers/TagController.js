@@ -14,7 +14,7 @@ const login = async(browser) => {
     await page.evaluate("navigator.userAgent");
     await page.setViewport({
         width: 400,
-        height: 600,
+        height: 1000,
     });
 
     const response = await page.goto(loginUrl, {
