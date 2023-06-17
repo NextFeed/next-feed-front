@@ -5,9 +5,7 @@ import { apiBaseUrl, localApiBaseUrl } from "../../Utils/Constants.js";
 
 export default function () {
     const {
-        tag,
         setTag,
-        hash,
         screenW,
         screenH,
         setIsLoading,
@@ -16,6 +14,7 @@ export default function () {
         isMale,
         setIsMale,
         setTagAnalysisResult,
+        setLoadingText,
     } = useContext(RootContext);
     const [tagInput, setTagInput] = useState("");
     
@@ -27,6 +26,7 @@ export default function () {
         
         let accountInfo;
         setLoadingRate(0);
+        setLoadingText("계정정보 불러오는 중");
         // [crawling]
         try {
             const url = `${localApiBaseUrl}/tag?tag=${tagInput}`;
@@ -70,6 +70,7 @@ export default function () {
         
 
         setLoadingRate(0.5);
+        setLoadingText("AI가 계정 분석중");
         // [analyze]
         try {
             const reqUrl = `${apiBaseUrl}/analyze/account/`;

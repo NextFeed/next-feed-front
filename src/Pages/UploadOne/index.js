@@ -15,6 +15,7 @@ export default function () {
         setLoadingRate,
         setOneResult,
         isMale,
+        setLoadingText,
     } = useContext(RootContext);
 
     const hiddenFileInput = useRef(null);
@@ -23,6 +24,7 @@ export default function () {
     const onAnalyze = async() => {
         setIsLoading(true);
         setLoadingRate(0.5);
+        setLoadingText("AI가 사진 분석중");
 
         try {
             const reqUrl = `${apiBaseUrl}/analyze/image/`;

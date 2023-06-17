@@ -42,6 +42,8 @@ export default function() {
     const [multiImgs, setMultiImgs] = useState();
     const [oneResult, setOneResult] = useState();
     const [multiResults, setMultiResults] = useState();
+    const [loadingText, setLoadingText] = useState("");
+
 
 	const onResize = () => {
         setScreenW(window.innerWidth);
@@ -91,6 +93,8 @@ export default function() {
         setOneResult,
         multiResults,
         setMultiResults,
+        loadingText, 
+        setLoadingText,
     }}>
 		{
             isLoading ? 
