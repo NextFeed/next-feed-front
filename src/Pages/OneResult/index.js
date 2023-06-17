@@ -70,7 +70,7 @@ export default function () {
         </div>
         <BottomNavigator 
             text="다른 사진 분석하기" 
-            analysisResult={oneResult}
+            analysisResult={tagAnalysisResult}
         />
         <WideButton 
             text="Instagram 결과로 돌아가기"
