@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -131,7 +131,6 @@ code {
     width: 150px;
     height: 30px;
     /* margin: 5px 0 0 65px; */
-    font-family: Inter;
     font-size: 25px;
     font-weight: bold;
     font-stretch: normal;
@@ -153,7 +152,6 @@ code {
     width: 318px;
     height: 70px;
     margin: 31px 36px 6px;
-    font-family: Inter;
     font-size: 29px;
     font-weight: bold;
     font-stretch: normal;
@@ -168,7 +166,6 @@ code {
     width: 305px;
     height: 24px;
     margin: 6px 43px 23px 42px;
-    font-family: Inter;
     font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
@@ -183,7 +180,6 @@ code {
     width: 127px;
     height: 15px;
     margin: 0 77px 6px 76px;
-    font-family: Inter;
     font-size: 12px;
     font-weight: 500;
     font-stretch: normal;
@@ -221,7 +217,6 @@ code {
     height: 21px;
     flex-grow: 0;
     /* margin: 4px 51px 4px 9px; */
-    font-family: Inter;
     font-size: 17px;
     font-weight: normal;
     font-stretch: normal;
@@ -243,7 +238,7 @@ input.taginput {
     width: 160px;
     height: 36px;
     border: none;
-    margin: 4px 4px 4px 4px;
+    /* margin: 4px 4px 4px 4px; */
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
@@ -269,7 +264,6 @@ input.submit {
     margin: 5px 7px 5px 0;
     border-radius: 14.5px;
     background-image: linear-gradient(65deg, #ffe144 1%, #f93560 40%, #da21b0 67%, #585acb 100%);
-    font-family: Inter;
     font-size: 12px;
     font-weight: bold;
     font-stretch: normal;
@@ -306,9 +300,8 @@ input.submit {
 }
 
 .gender {
-    width: 32px;
-    height: 21px;
-    font-family: Inter;
+    /* width: 32px; */
+    /* height: 21px; */
     font-size: 17px;
     font-weight: bold;
     font-stretch: normal;
@@ -325,7 +318,6 @@ input.submit {
     width: 306px;
     height: 35px;
     margin: 0 84px 32px 98px;
-    font-family: Inter;
     font-size: 29px;
     font-weight: bold;
     font-stretch: normal;
@@ -355,7 +347,6 @@ input.submit {
     right: 0;
     top: 0;
     /* margin: 0 0 0 260px; */
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -381,6 +372,14 @@ input.submit {
     background-image: linear-gradient(58deg, #ffe144 1%, #f93560 40%, #da21b0 67%, #585acb 100%);
 }
 
+.taglabel {
+    width: 358px;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--grey-6);
+}
+
 .Frame-20 {
     width: 81px;
     height: 70px;
@@ -401,7 +400,6 @@ input.submit {
     width: 300px;
     height: 35px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 29px;
     font-weight: bold;
     font-stretch: normal;
@@ -416,7 +414,6 @@ input.submit {
     width: 300px;
     height: 18px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 15px;
     font-weight: normal;
     font-stretch: normal;
@@ -432,7 +429,6 @@ input.submit {
     width: 62px;
     height: 35px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 29px;
     font-weight: bold;
     font-stretch: normal;
@@ -447,7 +443,6 @@ input.submit {
     width: 218px;
     height: 22px;
     margin: 18px 86px 58px;
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -477,7 +472,6 @@ input.submit {
     width: 238px;
     height: 24px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 20px;
     font-weight: bold;
     font-stretch: normal;
@@ -505,7 +499,6 @@ input.submit {
     width: 218px;
     height: 22px;
     margin: 18px 86px 58px;
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -520,7 +513,6 @@ input.submit {
     width: 238px;
     height: 24px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 20px;
     font-weight: bold;
     font-stretch: normal;
@@ -540,7 +532,7 @@ input.submit {
     justify-content: center;
     align-items: flex-start;
     gap: 6px;
-    margin: 77px 15px 20px;
+    margin: 0 15px 20px;
     padding: 15px 15px 7px;
     border-radius: 20px;
     border: solid 1px var(--grey-3);
@@ -550,7 +542,6 @@ input.submit {
     width: 300px;
     height: 35px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 29px;
     font-weight: bold;
     font-stretch: normal;
@@ -563,17 +554,16 @@ input.submit {
 
 .-CUTE- {
     width: 300px;
-  height: 35px;
-  flex-grow: 0;
-  font-family: Inter;
-  font-size: 29px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: var(--main);
+    height: 35px;
+    flex-grow: 0;
+    font-size: 29px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--main);
 }
 
 .-CUTE- ._ {
@@ -591,7 +581,6 @@ input.submit {
     width: 17px;
     height: 8px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 7px;
     font-weight: normal;
     font-stretch: normal;
@@ -606,7 +595,6 @@ input.submit {
     width: 48px;
     height: 15px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 12px;
     font-weight: bold;
     font-stretch: normal;
@@ -645,7 +633,6 @@ input.submit {
     width: 17px;
     height: 10px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 8px;
     font-weight: bold;
     font-stretch: normal;
@@ -671,9 +658,9 @@ input.submit {
 .profileimage {
     object-fit: contain;
     width: 100px;
-  height: 100px;
-  flex-grow: 0;
-  border-radius: 50%;
+    height: 100px;
+    flex-grow: 0;
+    border-radius: 50%;
 }
 
 .Frame-6 {
@@ -689,10 +676,10 @@ input.submit {
 }
 
 .share {
+    margin-bottom: 5px;
     width: 70px;
     height: 15px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 12px;
     font-weight: 500;
     font-stretch: normal;
@@ -733,7 +720,6 @@ input.submit {
     width: 199px;
     height: 22px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -774,7 +760,6 @@ input.submit {
     width: 125px;
     margin-bottom: 5px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 12px;
     font-weight: 500;
     font-stretch: normal;
@@ -793,7 +778,6 @@ input.submit {
     width: 75px;
     height: 22px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -822,7 +806,6 @@ input.submit {
     width: 125px;
     margin-bottom: 5px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 12px;
     font-weight: 500;
     font-stretch: normal;
@@ -842,7 +825,6 @@ input.submit {
     width: 92px;
     height: 22px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -890,7 +872,6 @@ input.submit {
     width: 67px;
     height: 22px;
     flex-grow: 0;
-    font-family: Inter;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
@@ -905,7 +886,7 @@ input.submit {
     display: none;
 }
 
-.multiimgcontainer{
+.multiimgcontainer {
     overflow-x: scroll;
     display: -webkit-inline-box;
 }
@@ -916,9 +897,9 @@ input.submit {
 
 .multiresult {
     width: 330px;
-  height: 154px;
-  margin: 8px 3px 9px 0;
-  padding: 0;
+    height: 154px;
+    margin: 8px 3px 9px 0;
+    padding: 0;
 }
 
 .multiresult div {
@@ -926,22 +907,21 @@ input.submit {
 }
 
 .multiresult .feature {
-    font-family: Inter;
-  font-size: 29px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: var(--main);
+    font-size: 29px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--main);
 }
 
 .multiresult .image {
     width: 100px;
-  height: 100px;
-  flex-grow: 0;
-  border-radius: 17px;
+    height: 100px;
+    flex-grow: 0;
+    border-radius: 17px;
     object-fit: contain;
 }
 
@@ -951,8 +931,7 @@ input.submit {
 
 .sortButton {
     width: 101px;
-  height: 21px;
-    font-family: Inter;
+    height: 21px;
     font-size: 12px;
     font-weight: bold;
     font-stretch: normal;
@@ -965,17 +944,16 @@ input.submit {
 
 .multiResultsBox {
     width: 360px;
-  margin: 9px 15px 12px;
-  padding: 15px 0;
-  border-radius: 20px;
-  border: solid 1px var(--grey-3);
+    margin: 9px 15px 12px;
+    padding: 15px 0;
+    border-radius: 20px;
+    border: solid 1px var(--grey-3);
 }
 
 .moreButton {
     width: 41px;
     height: 39px;
     margin: 12px 174px 31px 175px;
-    font-family: Inter;
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;

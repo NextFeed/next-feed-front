@@ -9,11 +9,10 @@ export default function () {
         tag,
         setTag,
         screenW,
-        screenH,
         tagAnalysisResult,
         accountInfo,
     } = useContext(RootContext);
-    const feature1 = tagAnalysisResult.feature1;
+    const feature1 = tagAnalysisResult?.feature1;
 
     return <div
         style={{
@@ -40,6 +39,9 @@ export default function () {
                     계정 분석 결과
                 </span>
             </div>
+        </div>
+        <div className="taglabel fs">
+            @{tag}
         </div>
         {
             tagAnalysisResult &&

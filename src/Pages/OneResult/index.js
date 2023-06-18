@@ -8,14 +8,14 @@ import { features } from "../../Utils/Constants.js";
 export default function () {
     const {
         screenW,
-        screenH,
+        tag,
         oneImg,
         oneResult,
         tagAnalysisResult,
     } = useContext(RootContext);
 
     const isFit = tagAnalysisResult?.feature1 == oneResult?.feature1;
-    const feature1 = oneResult.feature1;
+    const feature1 = oneResult?.feature1;
 
     return <div
         style={{
@@ -41,6 +41,9 @@ export default function () {
                     사진 분석 결과
                 </span>
             </div>
+        </div>
+        <div className="taglabel fs">
+            @{tag}
         </div>
         {
             oneResult &&

@@ -18,6 +18,7 @@ const scoreOfFeature = (result, feature) => {
 
 export default function () {
     const {
+        tag,
         screenW,
         multiResults,
         multiImgs,
@@ -107,6 +108,9 @@ export default function () {
                     사진 분석 결과
                 </span>
             </div>
+        </div>
+        <div className="taglabel fs">
+            @{tag}
         </div>
         {
             multiResults &&
