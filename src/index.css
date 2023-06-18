@@ -128,7 +128,7 @@ code {
 }
 
 .pageTitle {
-    width: 150px;
+    /* width: 150px; */
     height: 30px;
     /* margin: 5px 0 0 65px; */
     font-size: 25px;
@@ -717,7 +717,7 @@ input.submit {
 }
 
 .AIanalysys {
-    width: 199px;
+    /* width: 199px; */
     height: 22px;
     flex-grow: 0;
     font-size: 18px;
@@ -757,7 +757,7 @@ input.submit {
 }
 
 .howmuchcute {
-    width: 125px;
+    /* width: 125px; */
     margin-bottom: 5px;
     flex-grow: 0;
     font-size: 12px;
@@ -775,7 +775,7 @@ input.submit {
 }
 
 .oneanalysis {
-    width: 75px;
+    /* width: 75px; */
     height: 22px;
     flex-grow: 0;
     font-size: 18px;
@@ -803,7 +803,7 @@ input.submit {
 }
 
 .mostcutefind {
-    width: 125px;
+    /* width: 125px; */
     margin-bottom: 5px;
     flex-grow: 0;
     font-size: 12px;
@@ -822,7 +822,7 @@ input.submit {
 
 
 .multianalysis {
-    width: 92px;
+    /* width: 92px; */
     height: 22px;
     flex-grow: 0;
     font-size: 18px;
