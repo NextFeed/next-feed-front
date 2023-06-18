@@ -857,7 +857,7 @@ input.submit {
 .Rectangle-10 {
     width: 200px;
     height: 200px;
-    margin: 68px 95px 49px;
+    margin: 68px 15px 49px;
     /* padding: 50px; */
     border-radius: 20px;
     border: solid 2px var(--black-1);
@@ -903,6 +903,15 @@ input.submit {
 
 .fileinput1 {
     display: none;
+}
+
+.multiimgcontainer{
+    overflow-x: scroll;
+    display: -webkit-inline-box;
+}
+
+.multiimgcontainer img {
+    object-fit: contain;
 }
 
 .multiresult {
