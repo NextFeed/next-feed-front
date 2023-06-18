@@ -4,19 +4,14 @@ import { apiBaseUrl } from "../../Utils/Constants.js";
 
 export default function () {
     const {
-        tag,
-        setTag,
-        hash,
         screenW,
-        screenH,
-        oneImg,
-        setOneImg,
         multiImgs,
         setMultiImgs,
         setIsLoading,
         setLoadingRate,
-        setMultiResult,
+        setMultiResults,
         isMale,
+        setLoadingText,
     } = useContext(RootContext);
 
     const hiddenFileInput = useRef(null);
@@ -38,11 +33,10 @@ export default function () {
                 imageUrlLists[i] = reader.result.split(',')[1];
                 setUploadedFile([...imageUrlLists]); 
                 setMultiImgs([...imageUrlLists]);
-                console.log(imageUrlLists); 
             };
             reader.readAsDataURL(imageLists[i]);
         }
-      };
+    };
     
     const handleDeleteImage = (id) => {
         var result = window.confirm('삭제하시겠습니까?');
@@ -50,27 +44,35 @@ export default function () {
     };
 
     const onAnalyze = async() => {
-        // setIsLoading(true);
-        // setLoadingRate(0.5);
+        setIsLoading(true);
+        setLoadingRate(0.5);
+        setLoadingText("AI가 사진 분석중");
 
-        // const reqUrl = `${apiBaseUrl}/analyze/image/`;
-        // const body = {
-        //     type: isMale ? "male" : "female",
-        //     img: multiImgs,
-        // }
-        // const response = await fetch(reqUrl, {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Accept': 'application/json',
-        //     },
-        //     body: JSON.stringify(body),
-        // });
-
-        // const multiResult = await response.json();
-        // setMultiResult(multiResult); 
-        // setLoadingRate(1.0);
-        // setIsLoading(false);
+        try {
+            const reqUrl = `${apiBaseUrl}/analyze/images/`;
+            const body = {
+                type: isMale ? "male" : "female",
+                imgs: multiImgs,
+            }
+            const response = await fetch(reqUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(body),
+            });
+    
+            const multiResults = await response.json();
+            setMultiResults(multiResults); 
+        } catch(error) {
+            console.log(error);
+            alert("분석 서버 오류: " + error.message);
+            setIsLoading(false);
+            return;
+        }
+        setLoadingRate(1.0);
+        setIsLoading(false);
 
         window.location.hash = "multiresult";
     };
