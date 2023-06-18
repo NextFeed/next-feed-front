@@ -31,8 +31,8 @@ export default function() {
 	const [screenW, setScreenW] = useState(window.innerWidth);
     const [screenH, setScreenH] = useState(window.innerHeight);
 	const [hash, setHash] = useState(window.location.hash);
-	const [tag, setTag] = useState("");
-	// const [tag, setTag] = useState("aa");
+	//const [tag, setTag] = useState("");
+	const [tag, setTag] = useState("aa");
     const [isLoading, setIsLoading] = useState(false);
     const [loadingRate, setLoadingRate] = useState(0);
     const [isMale, setIsMale] = useState(false);
