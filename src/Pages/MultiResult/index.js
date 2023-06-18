@@ -29,7 +29,9 @@ export default function () {
     const [isCollapsed, setIsCollapsed] = useState(true);
     const [sortedMultiResults, setSortedMultiResults] = useState([]);
 
-    const firstFeature = tagAnalysisResult?.feature1 || "";
+    const feature1 = tagAnalysisResult?.feature1 || "";
+    const feature2 = tagAnalysisResult?.feature2 || "";
+    const feature3 = tagAnalysisResult?.feature3 || "";
     useEffect(() => {
         if(!multiResults || multiResults.length === 0) {
             return;
@@ -40,9 +42,22 @@ export default function () {
         });
         if(sortType === "simil") {
             _sortedMultiResults = _sortedMultiResults.sort((result1, result2) => {
-                const score1 = scoreOfFeature(result1, firstFeature);
-                const score2 = scoreOfFeature(result2, firstFeature);
-                return score2 - score1;
+                const score11 = scoreOfFeature(result1, feature1);
+                const score12 = scoreOfFeature(result2, feature1);
+                if(score11 !== score12) {
+                    return score12 - score11;
+                }
+                const score21 = scoreOfFeature(result1, feature2);
+                const score22 = scoreOfFeature(result2, feature2);
+                if(score21 !== score22) {
+                    return score22 - score21;
+                }
+                const score31 = scoreOfFeature(result1, feature3);
+                const score32 = scoreOfFeature(result2, feature3);
+                if(score31 !== score32) {
+                    return score32 - score31;
+                }
+                return 0;
             });
         }
         if(isCollapsed) {
