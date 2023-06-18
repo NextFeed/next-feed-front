@@ -44,6 +44,7 @@ export default function() {
     const [oneResult, setOneResult] = useState();
     const [multiResults, setMultiResults] = useState();
     const [loadingText, setLoadingText] = useState("로딩중");
+    const [isTypeSelected, setIsTypeSelected] = useState(false);
 
 
 	const onResize = () => {
@@ -96,6 +97,8 @@ export default function() {
         setMultiResults,
         loadingText, 
         setLoadingText,
+        isTypeSelected, 
+        setIsTypeSelected,
     }}>
 		{
             isLoading ? 

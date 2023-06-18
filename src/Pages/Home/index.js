@@ -11,15 +11,23 @@ export default function () {
         setIsLoading,
         setLoadingRate,
         setAccountInfo,
+        isTypeSelected,
+        setIsTypeSelected,
         isMale,
         setIsMale,
         setTagAnalysisResult,
         setLoadingText,
     } = useContext(RootContext);
     const [tagInput, setTagInput] = useState("");
+
     
     const onSubmit = async(event) => {
         event.preventDefault();
+        if(!isTypeSelected) {
+            alert("성별을 선택해주세요.");
+            return;
+        }
+
         setTag(tagInput);
         setIsLoading(true);
         
@@ -143,7 +151,7 @@ export default function () {
                     onChange={event => setTagInput(event.target.value)}
                     required 
                 />
-                <div className="Instagram- placeholder">
+                <div className="Instagram- placeholder fc">
                     Instagram 계정
                 </div>
                 <input 
@@ -156,16 +164,22 @@ export default function () {
                 display: "flex",
             }}>
                 <div 
-                    onClick={() => setIsMale(true)}
-                    className={"Rectangle-2 fc button " + (isMale ? "selected" : "unselected")}
+                    onClick={() => {
+                        setIsMale(true);
+                        setIsTypeSelected(true);
+                    }}
+                    className={"Rectangle-2 fc button " + ((isMale && isTypeSelected) ? "selected" : "unselected")}
                 >
                     <span className="gender">
                         남성
                     </span>
                 </div>
                 <div 
-                    onClick={() => setIsMale(false)}
-                    className={"Rectangle-3 fc button " + (isMale ? "unselected" : "selected")}
+                    onClick={() => {
+                        setIsMale(false);
+                        setIsTypeSelected(true);
+                    }}
+                    className={"Rectangle-3 fc button " + ((!isMale && isTypeSelected) ? "selected" : "unselected")}
                 >
                     <span className="gender">
                         여성

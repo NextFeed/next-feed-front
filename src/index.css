@@ -469,7 +469,7 @@ input.submit {
 }
 
 .return {
-    width: 238px;
+    /* width: 238px; */
     height: 24px;
     flex-grow: 0;
     font-size: 20px;
@@ -869,7 +869,7 @@ input.submit {
 }
 
 .analysis {
-    width: 67px;
+    /* width: 67px; */
     height: 22px;
     flex-grow: 0;
     font-size: 18px;
