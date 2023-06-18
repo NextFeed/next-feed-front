@@ -3,6 +3,7 @@ import { RootContext } from '../../Utils/Contexts.js';
 import Graph from "../../Components/Graph.js";
 import BottomNavigator from "../../Components/BottomNavigator.js";
 import WideButton from "../../Components/WideButton.js";
+import { features } from "../../Utils/Constants.js";
 
 export default function () {
     const {
@@ -14,6 +15,7 @@ export default function () {
     } = useContext(RootContext);
 
     const isFit = tagAnalysisResult?.feature1 == oneResult?.feature1;
+    const feature1 = oneResult.feature1;
 
     return <div
         style={{
@@ -47,7 +49,7 @@ export default function () {
                     {oneResult.feature1.toUpperCase()} {oneResult.score1}%
                 </span>
                 <div className="onekorcute fc">
-                    이 사진의 매력: {oneResult.feature1.toUpperCase()} 
+                    이 사진의 매력: {features[feature1]} 
                 </div>
                 <img 
                     className="oneimage"

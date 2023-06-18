@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { RootContext } from '../../Utils/Contexts.js';
 import Graph from "../../Components/Graph.js";
 import BottomNavigator from "../../Components/BottomNavigator.js";
-
+import { features } from "../../Utils/Constants.js";
 
 export default function () {
     const {
@@ -13,7 +13,7 @@ export default function () {
         tagAnalysisResult,
         accountInfo,
     } = useContext(RootContext);
-
+    const feature1 = tagAnalysisResult.feature1;
 
     return <div
         style={{
@@ -48,7 +48,7 @@ export default function () {
                     {tagAnalysisResult.feature1.toUpperCase()} {tagAnalysisResult.score1}%
                 </span>
                 <div className="onekorcute fs">
-                    당신의 매력: {tagAnalysisResult.feature1.toUpperCase()} 
+                    당신의 매력: {features[feature1]} 
                 </div>
                 <div className="Frame-11">
                     {
